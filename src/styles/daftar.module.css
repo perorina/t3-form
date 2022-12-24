@@ -2,7 +2,7 @@
   @apply rounded-lg bg-blue-500 py-2 px-4 font-semibold text-white shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
 }
 .form_main {
-  @apply mx-auto w-full max-w-3xl rounded-md bg-opacity-50 font-sans;
+  @apply mx-auto w-full max-w-3xl rounded-md bg-opacity-50 font-poppins;
 }
 .form_wrapper {
   @apply overflow-hidden shadow sm:rounded-md;
@@ -20,7 +20,7 @@
   @apply my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
 }
 .input_half label {
-  @apply block text-sm font-medium text-gray-700;
+  @apply block text-xs font-medium text-gray-700 md:text-sm;
 }
 .input_half label span {
   @apply ml-2 text-xs text-rose-500;
@@ -32,15 +32,33 @@
   @apply col-span-6;
 }
 .input_full label {
-  @apply block text-sm font-medium text-gray-700;
+  @apply block text-xs font-medium text-gray-700 md:text-sm;
 }
 .input_full label span {
   @apply ml-2 text-xs text-rose-500;
 }
 .input_full input {
+  @apply my-1 block w-full rounded-md border-gray-300 text-xs shadow-sm focus:border-indigo-500 focus:ring-indigo-500 md:text-sm;
+}
+.input_full textarea {
   @apply my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
 }
 
 .input_half select {
   @apply my-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm;
+}
+.input_three {
+  @apply col-span-6 sm:col-span-2;
+}
+.input_three input {
+  @apply my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
+}
+.input_three select {
+  @apply my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
+}
+.input_three textarea {
+  @apply my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm;
+}
+.input_three label {
+  @apply block text-xs font-medium text-gray-700 md:text-sm;
 }

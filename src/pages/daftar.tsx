@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import type { RegisterType } from "./Lists";
 import StepTwo from "../components/StepTwo";
 import StepThree from "../components/StepThree";
+import StepFourth from "../components/StepFourth";
 
 const Daftar: NextPage = () => {
   const [step, setStep] = useState(1);
@@ -53,11 +54,12 @@ const Daftar: NextPage = () => {
     },
   });
 
-  console.log(values);
+  // console.log(values);
   return (
     <main className={styles.form_main}>
       <form onSubmit={handleSubmit}>
-        {step === 1 && (
+        <StepFourth />
+        {/* {step === 1 && (
           <StepOne
             setStep={setStep}
             step={step}
@@ -82,7 +84,7 @@ const Daftar: NextPage = () => {
             values={values}
             handleChange={handleChange}
           />
-        )}
+        )} */}
       </form>
     </main>
   );

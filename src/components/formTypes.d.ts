@@ -25,3 +25,9 @@ export type getProvResponseType = {
   province: string;
   villages: desaType[];
 };
+
+export type UploadFieldBpkb = {
+  name: string;
+  label: string;
+  span: string;
+};

@@ -23,12 +23,17 @@ const StepTwo = ({
   });
   const MIN_QUERY_LENGTH = 4; //
 
+  // fungsi eventChange kode_pos atau dom_kode_pos
   const handleChangePostal = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    // pass Formik eventChange
     handleChange(e);
 
     const inputLength = e.target.value.toString().length;
     const inputValue = e.currentTarget.value;
+
+    // Jika Input kodepos lebih dari 4 angka maka trigger request api
     if (inputLength > MIN_QUERY_LENGTH) {
+      // jika target input "kode_pos"
       if (e.target.name === "kode_pos") {
         await axios.get(`/api/getProv?code=${inputValue}`).then(({ data }) => {
           setFieldValue("kecamatan", data.district);
@@ -38,6 +43,7 @@ const StepTwo = ({
           setDesaList(data.villages);
         });
       } else {
+        // target input "dom_kode_pos"
         await axios.get(`/api/getProv?code=${inputValue}`).then(({ data }) => {
           setFieldValue("dom_kecamatan", data.district);
           setFieldValue("dom_kota", data.city);
@@ -46,6 +52,8 @@ const StepTwo = ({
         });
       }
     } else {
+      // jika input kurang dari 5 angka kosongkan field
+
       if (e.target.name === "kode_pos") {
         setFieldValue("kecamatan", "");
         setFieldValue("kota", "");
@@ -69,9 +77,15 @@ const StepTwo = ({
       setFieldValue("dom_provinsi", domisili.province);
       setDomDesaList(domisili.villages);
       setFieldValue("dom_desa", values.desa);
+    } else {
+      setFieldValue("dom_kode_pos", "");
+      setFieldValue("dom_kecamatan", "");
+      setFieldValue("dom_kota", "");
+      setFieldValue("dom_provinsi", "");
+      setDomDesaList([]);
     }
   };
-  console.log(domisili);
+
   return (
     <>
       <div className={styles.form_wrapper}>
